@@ -1,5 +1,27 @@
 # JAVAfirst
 
+## funciones
+
+cadena.charAr(indice) esto hace que muestre la letra en la pocision del indice
+
+equals: es para comparar ignoranco mayusculas y minusculas
+
+valueOf() convierte en otro yipo un dato
+
+
+substring(indice): es para coger una cadena y apartir de 0 hasat el lindice y convierte en subcadena
+o tambien se puede substring(desde,hasta) y es algo parecido
+a sql
+
+
+- wrappers(envolvents)
+
+
+## ARRAYS
+
+* EN LLAVA LAS LISTAS NO PUEDEN SER DE DIFERENTE TIPO
+
+
 package com.intro;
 
 public class Main {
@@ -170,4 +192,33 @@ public class EjemploDoWhile {
         System.out.println("Ha ingresado un número válido: " + numero);
     }
 }
+
+## ciclos for 
+public class Main {
+
+    public static void main(String[] args) {
+        int valor = 0;
+        int acum = 0;
+        int numeroInv = 0;
+        int numeroVali = 0;
+        try(Scanner sc = new Scanner(System.in)){
+            for(int i = 0;i <= 3;i++){
+                System.out.println("ingrese el valor mayor a 0");
+                valor = sc.nextInt();
+                sc.nextLine();
+                if(valor < 0){
+                    numeroInv ++;
+                    continue;
+                }
+                numeroVali ++;
+                acum += valor;
+            }
+
+        }
+        System.out.println(MessageFormat.format("la suma de los numero ingresados es de {0} fueron {1} numers ingresados y de lo numero invalidos es de {2}",acum,numeroVali, numeroInv));
+    }
+
+
+}
+
 
