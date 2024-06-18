@@ -345,3 +345,106 @@ public Estudiante(String nombre, String apellidos, int edad) {
 
 // modificador tipoRetorno nombre del metodo([parametro])
 
+--
+package com.ejemploproyecto;
+
+public class Main {
+    public static void main(String[] args) {
+        Estudiante myStudent = new Estudiante();
+        myStudent.setNombre("juanito");
+        myStudent.setApellidos("Perez");
+        myStudent.setEdad(13);
+     
+        System.out.println(myStudent.getNombre());
+    }
+   
+}
+
+//operador diamante <>
+
+// declarador de arraylist
+
+// add()es para agregar como el append
+//get()
+//set()
+//remove()
+//clear()
+//size() el numero de elementos de la lista
+// isEmpty si no contiene nada
+
+
+
+// metodos staticos para acceder sin necesidad de una instancia
+
+// lo unico que debe ser publico son los metodos y las propiedades de las clases
+
+## muy importante
+
+package com.arraylist;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import javax.swing.JOptionPane;
+
+// public class Main {
+//     public static void main(String[] args) {
+//         ArrayList <String> list = new ArrayList<>();
+
+//         list.add("Backend Java");
+
+//         list.add(0,"Fundamentos");
+
+//         String elemento = list.get(0);
+//         list.set(0,"Programacion web");
+
+//         list.add("Pasteleria");
+//         boolean result = list.remove("Pasteleria");
+
+//         // String eliminado = list.remove(1);
+
+    
+
+//         System.out.println(elemento);
+        
+//         // System.out.println(eliminado);
+//         System.out.println(result);
+//         System.out.println(list);
+//         // eliminar lista
+//         // list.clear();
+//         // System.out.println(list);
+
+//         for(String item : list){
+//             System.out.println(item);
+//         }
+
+        
+//     }
+// }
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList <Estudiante> listStudent = new ArrayList<>();
+        Estudiante student = new Estudiante();
+
+     
+        try(Scanner sc = new Scanner(System.in)){
+            while(JOptionPane.showConfirmDialog(null,"quiere agregar un estudiante","INFORMACION",JOptionPane.YES_NO_OPTION,JOptionPane.INFORMATION_MESSAGE) == 0){
+            System.out.println("Ingrese el nombre del estudiante");
+            student.setNombre(sc.nextLine());
+            
+            System.out.println("Ingrese el apellido");
+            student.setApellidos(sc.nextLine());
+            
+            System.out.println("Edad");
+            student.setEdad(sc.nextInt());
+            sc.nextLine();
+            listStudent.add(student);
+        }
+        }
+       
+        for(Estudiante item : listStudent){
+            System.out.println("El nombre: "+ item.getNombre() + "\napellido: "+ item.getApellidos() + "\n Edad: "+ item.getEdad() + "\n");
+        }
+    }
+}
