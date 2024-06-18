@@ -221,4 +221,52 @@ public class Main {
 
 }
 
+## otros ejemplos
+
+/* public class Main {
+    public static void main(String[] args) {
+        int edad = 0;
+        String nombre = null;
+
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.println("Ingrese el nombre");
+            nombre = sc.nextLine();  
+            
+            System.out.println("Ingrese su edad");
+            edad = sc.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.println(e + " esta mal");
+        }
+        
+        System.out.println(MessageFormat.format("{0} tiene {1} años", nombre, edad));
+    }
+}
+ */
+
+ public class Main {
+     public static void main(String[] args) {
+         try (Scanner sc = new Scanner(System.in)) {
+             int numero;
+ 
+             do {
+                 System.out.print("Ingrese un número: ");
+                 try {
+                     numero = sc.nextInt();
+                     if (numero >= 0) {
+                         System.out.println("Ha ingresado un número válido: " + numero);
+                     } else {
+                         System.out.println("Ha ingresado un número menor que 0. Terminando el programa.");
+                         break; // Sale del bucle do-while si el número es menor que 0
+                     }
+                 } catch (InputMismatchException e) {
+                     System.out.println("Error: Entrada inválida. Debe ingresar un número entero.");
+                     sc.next(); // Limpia el buffer de entrada
+                 }
+             } while (true);
+ 
+         } // Fin del try-with-resources
+ 
+     } // Fin del método main
+ }
+ 
 
