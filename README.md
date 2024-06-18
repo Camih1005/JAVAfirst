@@ -286,3 +286,18 @@ public class Main {
 
         }
      
+
+
+# metodos     
+
+//operador diamante <>
+
+// declarador de arraylist
+
+// add()es para agregar como el append
+//get()
+//set()
+//remove()
+//clear()
+//size() el numero de elementos de la lista
+// isEmpty si no contiene nada
